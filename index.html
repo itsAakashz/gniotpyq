@@ -15,11 +15,11 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <!-- <div class="hamburger" id="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
-            </div>
+            </div> -->
         </nav>
     </header>
     <main>
@@ -93,10 +93,10 @@
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
             <p>If you have any questions or need further information, feel free to contact us.</p>
-            <form action="https://formspree.io/f/" method="POST">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </section>
@@ -104,9 +104,6 @@
     <footer>
         <p>Made with ❤️ by <a href="https://github.com/itsAakashz">Aakash Gupta</a></p>
         <p>This project is <a href="https://github.com/itsAakashz/gniotpyq">open source</a>. Contributions are welcome!</p>
-    <a href="https://github.com/itsAakashz/gniotpyq"></a>
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="30" height="30">
-    </a>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="src/scripts/hamburger.js"></script>

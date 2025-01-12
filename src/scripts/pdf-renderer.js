@@ -22,8 +22,9 @@ function renderPDF(year, semester, branch, exam, subject) {
                 const canvas = document.createElement('canvas');
                 canvas.className = 'pdf-page-canvas';
                 const context = canvas.getContext('2d');
-                canvas.height = scaledViewport.height;
-                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height * window.devicePixelRatio;
+                canvas.width = scaledViewport.width * window.devicePixelRatio;
+                context.scale(window.devicePixelRatio, window.devicePixelRatio);
 
                 const renderContext = {
                     canvasContext: context,
@@ -41,7 +42,7 @@ function renderPDF(year, semester, branch, exam, subject) {
     });
 
     // Disable right-click context menu to prevent downloading
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
+    // document.addEventListener('contextmenu', function(e) {
+    //     e.preventDefault();
+    // });
 }
