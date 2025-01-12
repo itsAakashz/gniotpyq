@@ -191,6 +191,10 @@ footer {
     bottom: 0;
 }
 
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
 @media (max-width: 768px) {
     .paper-item {
         width: calc(50% - 2rem);
