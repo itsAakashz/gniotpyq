@@ -39,6 +39,19 @@ function renderPDF(year, semester, branch, exam, subject) {
         }
     }, reason => {
         console.error(reason);
+        pdfContainer.innerHTML = '<img src="../assets/searchNotFound.png"  height="300px" width="400px" alt="Search Not Found" class="not-found-image"/>';
+        
+        // Apply CSS media query
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @media (max-width: 600px) {
+            .not-found-image {
+                height: 300px;
+                width: 250px;
+            }
+            }
+        `;
+        document.head.appendChild(style);
     });
 
     // Disable right-click context menu to prevent downloading

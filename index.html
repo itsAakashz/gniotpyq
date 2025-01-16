@@ -1,113 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previous Year Question Papers</title>
-    <link rel="stylesheet" href="src/styles/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <title>GNIOT PYQ</title>
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Previous Year Question Papers</h1>
-        <nav>
-            <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </nav>
+      <h1>GNIOT PYQ</h1>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
     </header>
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Welcome to the Question Papers Archive</h2>
-                <p>Find all the previous year question papers you need in one place.</p>
-                <a href="#papers" class="btn">Explore Papers</a>
-            </div>
-        </section>
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>We provide a comprehensive collection of previous year question papers to help students prepare for their exams. Our mission is to make study resources easily accessible to everyone.</p>
-        </section>
-        <section id="papers" class="papers">
-            <h2>Question Papers</h2>
-            <div class="filters">
-                <label for="year">Select Year:</label>
-                <select id="year">
-                    <option value="2025">2025</option>
-                    <option value="2024">2024</option>
-                    <option value="2023">2023</option>
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
-                </select>
-                <label for="semester">Select Semester:</label>
-                <select id="semester">
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
-                </select>
-                <label for="branch">Select Branch:</label>
-                <select id="branch">
-                    <option value="common">Common</option>
-                    <option value="cse">Computer Science</option>
-                    <option value="ece">Electronics and Communication</option>
-                    <option value="me">Mechanical Engineering</option>
-                    <option value="ce">Civil Engineering</option>
-                    <option value="ee">Electrical Engineering</option>
-                </select>
-                <label for="exam">Select Exam:</label>
-                <select id="exam">
-                    <option value="Sessional_1">Sessional 1</option>
-                    <option value="Sessional_2">Sessional 2</option>
-                    <option value="PUT">PUT</option>
-                    <option value="AKTU">AKTU</option>
-                </select>
-                <label for="subject">Select Subject:</label>
-                <select id="subject">
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="physics">Physics</option>
-                    <option value="chemistry">Chemistry</option>
-                    <option value="cs">Computer Science</option>
-                    <option value="ee">Electrical Engineering</option>
-                    <option value="EVS">EVS</option>
-                </select>
-                <button id="filter-btn" class="btn">Apply Filters</button>
-            </div>
-            <div id="pdf-container" class="pdf-container"></div>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need further information, feel free to contact us.</p>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h2>Welcome to the Question Papers Archive</h2>
+          <p>
+            Find all the previous year question papers you need in one place.
+          </p>
+          <a href="#papers" class="btn">Explore Papers</a>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>
+          We provide a comprehensive collection of previous year question papers
+          to help students prepare for their exams. Our mission is to make study
+          resources easily accessible to everyone.
+        </p>
+      </section>
+      <section id="papers" class="papers">
+        <h2>Question Papers</h2>
+        <div class="filters">
+          <label for="year">Select Year:</label>
+          <select id="year">
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+          </select>
+          <label for="semester">Select Semester:</label>
+          <select id="semester">
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+          </select>
+          <label for="branch">Select Branch:</label>
+          <select id="branch">
+            <option value="common">Common</option>
+            <option value="cse">Computer Science</option>
+            <option value="ece">Electronics and Communication</option>
+            <option value="me">Mechanical Engineering</option>
+            <option value="ce">Civil Engineering</option>
+            <option value="ee">Electrical Engineering</option>
+          </select>
+          <label for="exam">Select Exam:</label>
+          <select id="exam">
+            <option value="Sessional_1">Sessional 1</option>
+            <option value="Sessional_2">Sessional 2</option>
+            <option value="PUT">PUT</option>
+            <option value="AKTU">AKTU</option>
+          </select>
+          <label for="subject">Select Subject:</label>
+          <select id="subject">
+            <option value="Mathematics">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="cs">Computer Science</option>
+            <option value="ee">Electrical Engineering</option>
+            <option value="EVS">EVS</option>
+          </select>
+          <button id="filter-btn" class="btn">Apply Filters</button>
+        </div>
+        <div id="pdf-container" class="pdf-container"></div>
+      </section>
+      <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions or need further information, feel free to
+          contact us.
+        </p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </section>
     </main>
     <footer>
-        <p>This project is <a href="https://github.com/itsAakashz/gniotpyq">open source</a>. Contributions are welcome!</p>
+      <p>
+        This project is
+        <a href="https://github.com/itsAakashz/gniotpyq">open source</a>.
+        Contributions are welcome!
+      </p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="src/scripts/hamburger.js"></script>
     <script src="src/scripts/filters.js"></script>
     <script src="src/scripts/pdf-renderer.js"></script>
-</body>
+  </body>
 </html>
