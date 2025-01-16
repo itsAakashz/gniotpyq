@@ -3,12 +3,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
+  /* Prevent horizontal overflow */
   font-family: "Playwrite AU SA", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+
 
 header {
   background-color: #333;
@@ -25,6 +27,16 @@ header a {
 }
 
 header h1 {
+  margin: 0;
+  color: chocolate;
+}
+
+.bas {
+  position: relative;
+  left: 3px;
+  bottom: 2px;
+  color: skyblue;
+  font-size: 17px;
   margin: 0;
 }
 
@@ -86,6 +98,7 @@ nav ul li a:hover {
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: chocolate;
 }
 
 .hero p {
@@ -99,11 +112,13 @@ nav ul li a:hover {
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 .btn:hover {
   background-color: #0056b3;
+  border-radius: 40px;
+  transition: background-color 0.3s;
+  border: 2px solid yellow;
 }
 
 .about,
@@ -218,6 +233,7 @@ footer a {
   text-decoration: none;
 }
 
+
 @media (max-width: 768px) {
   .paper-item {
     width: calc(50% - 2rem);
@@ -255,6 +271,12 @@ footer a {
   nav ul.show {
     display: flex;
   }
+
+  .btn:checked {
+    border: 2px solid;
+    border-radius: 40px yellow;
+    transition: 0.6s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -268,5 +290,11 @@ footer a {
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .btn:checked {
+    border: 2px solid;
+    border-radius: 40px yellow;
+    transition: 0.6s;
   }
 }
