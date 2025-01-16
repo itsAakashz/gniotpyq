@@ -1,4 +1,4 @@
-# My Web App
+# GNIOT PYQ
 
 This project is a simple web application that allows users to view a PDF document directly in the browser without the option to download it.
 
@@ -38,3 +38,16 @@ To run this project locally, follow these steps:
 ## License
 
 This project is licensed under the MIT License.
+
+### Explanation:
+1. **Project Structure**: Detailed structure of the project files and directories.
+2. **Getting Started**: Instructions to clone the repository and run the project locally.
+3. **Usage**: Brief instructions on how to use the application.
+4. **Contributing**: Detailed steps for reporting bugs, suggesting features, and submitting pull requests.
+5. **Code Style**: Guidelines for maintaining code style and conventions.
+6. **Testing**: Importance of testing changes before submitting pull requests.
+7. **License**: Information about the project's license.
+8. **Acknowledgements**: Credits to libraries and services used in the project.
+9. **Contact**: Contact information for further questions or information.
+
+This detailed `README.md` will help contributors understand how to get started with the project and how to contribute effectively.
