@@ -72,8 +72,8 @@ nav ul li a:hover {
 }
 
 .hero {
-  background: url("path/to/your/hero-image.jpg") no-repeat center center/cover;
-  color: #341600;
+  background: url("../../assets/hero.jpg") no-repeat center center/cover;
+  color: #ffffff;
   text-align: center;
   padding: 5rem 1rem;
 }
