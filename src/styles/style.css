@@ -83,7 +83,7 @@ nav ul li a:hover {
 }
 
 .hero {
-  background: url("../../assets/hero.jpg") no-repeat center center/cover;
+  background: url("../../assets/backgrboard.png") no-repeat center center/cover;
   color: #ffffff;
   text-align: center;
   padding: 5rem 1rem;
@@ -294,5 +294,4 @@ footer a {
     transition: 0.6s;
   }
 }
-
 /* footer css */
