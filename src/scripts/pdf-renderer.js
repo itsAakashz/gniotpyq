@@ -33,8 +33,41 @@ function renderPDF(year, semester, branch, exam, subject) {
                 page.render(renderContext).promise.then(() => {
                     console.log('Page rendered');
                 });
-
+                
+                // Append canvas to the PDF container to download the PDF
                 pdfContainer.appendChild(canvas);
+                // Add download button after all pages are rendered
+                if (pageNum === pdf.numPages) {
+                    const downloadButton = document.createElement('button');
+                    downloadButton.textContent = 'Download';
+                    downloadButton.className = 'download-btn';
+                    downloadButton.onclick = () => {
+                    const link = document.createElement('a');
+                    link.href = pdfUrl;
+                    link.download = `${year}_${exam}_${subject}.pdf`;
+                    link.click();
+                    };
+                    pdfContainer.appendChild(downloadButton);
+
+                    // Apply CSS to the download button
+                    const style = document.createElement('style');
+                    style.innerHTML = `
+                    .download-btn {
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    }
+                    .download-btn:hover {
+                        background-color: #0056b3;
+                    }
+                    `;
+                    document.head.appendChild(style);
+                }
             });
         }
     }, reason => {
