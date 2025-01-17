@@ -273,6 +273,11 @@ footer a {
     border-radius: 40px yellow;
     transition: 0.6s;
   }
+  .hero-content{
+    margin: 0;
+    position: relative;
+    bottom: 50px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -292,6 +297,11 @@ footer a {
     border: 2px solid;
     border-radius: 40px yellow;
     transition: 0.6s;
+  }
+  .hero-content{
+    margin: 0;
+    position: relative;
+    bottom: 50px;
   }
 }
 /* footer css */
