@@ -11,7 +11,6 @@ body {
   font-style: normal;
 }
 
-
 header {
   background-color: #333;
   color: #fff;
@@ -233,7 +232,6 @@ footer a {
   text-decoration: none;
 }
 
-
 @media (max-width: 768px) {
   .paper-item {
     width: calc(50% - 2rem);
@@ -252,7 +250,6 @@ footer a {
     top: 70px;
     right: 0;
     text-align: center;
-
   }
 
   nav ul li {
@@ -261,7 +258,6 @@ footer a {
 
   nav ul li a {
     padding: 0rem;
-
   }
 
   nav ul li a:hover {
@@ -298,3 +294,5 @@ footer a {
     transition: 0.6s;
   }
 }
+
+/* footer css */
