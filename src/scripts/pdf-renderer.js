@@ -3,7 +3,7 @@ function renderPDF(year, semester, branch, exam, subject) {
     pdfContainer.innerHTML = ''; // Clear previous content
 
     // Construct the URL to the PDF based on the selected filters
-    const pdfUrl = `../../pdf/${year}/semester${semester}/${branch}/${subject}/${exam}/${year}_${exam}_${subject}.pdf`;
+    const pdfUrl = `https://drive.google.com/drive/folders/1lC0njeylstfiKv77002aXZ8LPouZwKyb`;
 
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
