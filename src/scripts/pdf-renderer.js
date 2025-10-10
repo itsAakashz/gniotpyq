@@ -1,9 +1,51 @@
-function renderPDF(year, semester, branch, exam, subject) {
+function renderPDF(year, yearOfStudy, branch, subject, exam) {
     const pdfContainer = document.getElementById('pdf-container');
     pdfContainer.innerHTML = ''; // Clear previous content
 
     // Construct the URL to the PDF based on the selected filters
-    const pdfUrl = `../../pdf/${year}/semester${semester}/${branch}/${subject}/${exam}/${year}_${exam}_${subject}.pdf`;
+    let pdfUrl;
+
+    // Convert yearOfStudy to actual folder names in your structure
+    let yearPath;
+    if (yearOfStudy === '1') {
+        yearPath = 'year1'; // Year 1 folder
+    } else if (yearOfStudy === '2') {
+        yearPath = 'year3'; // Year 2 maps to year3 folder
+    } else if (yearOfStudy === '3') {
+        yearPath = 'year5'; // Year 3 maps to year5 folder (if exists)
+    } else if (yearOfStudy === '4') {
+        yearPath = 'year7'; // Year 4 maps to year7 folder (if exists)
+    }
+
+    // Handle special cases based on actual folder structure
+    if (year === '2025' && yearOfStudy === '2') {
+        // For 2025 Year 2 (year3 folder), PDFs are in common/subject folders
+        const actualFileName = subject === 'Ds' ? 'DS.pdf' : `${subject}.pdf`;
+        pdfUrl = `pdf/${year}/${yearPath}/common/${subject}/${actualFileName}`;
+    } else if (branch === 'common' || yearOfStudy === '1' || yearOfStudy === '2' || yearOfStudy === '3') {
+        // For common branch or Years 1,2,3 - use common structure with exam folder
+        // Check if exam is properly set, if not use a default
+        const examType = exam || 'Sessional_1';
+        pdfUrl = `pdf/${year}/${yearPath}/common/${subject}/${examType}/${year}_${examType}_${subject}.pdf`;
+    } else {
+        // For specific branches in Year 4
+        const examType = exam || 'Sessional_1';
+        pdfUrl = `pdf/${year}/${yearPath}/${branch}/${subject}/${examType}/${year}_${examType}_${subject}.pdf`;
+    }
+
+    console.log('=== PDF RENDERER DEBUG ===');
+    console.log('Input parameters:', { year, yearOfStudy, branch, subject, exam });
+    console.log('Year path:', yearPath);
+    console.log('Constructed PDF URL:', pdfUrl);
+    console.log('========================');
+
+    // Validation: Check if subject is actually an exam type (common mistake)
+    if (['Sessional_1', 'Sessional_2', 'PUT', 'AKTU'].includes(subject)) {
+        console.error('ERROR: You selected an EXAM TYPE as SUBJECT!');
+        console.error('Please select a proper subject like: EVS, COA, Python, Mathematics, etc.');
+        pdfContainer.innerHTML = '<div style="color: red; text-align: center; padding: 20px;"><h3>Selection Error!</h3><p>You selected an EXAM TYPE as SUBJECT.<br>Please select a proper subject like: EVS, COA, Python, Mathematics, etc.</p></div>';
+        return;
+    }
 
     const pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
@@ -33,7 +75,7 @@ function renderPDF(year, semester, branch, exam, subject) {
                 page.render(renderContext).promise.then(() => {
                     console.log('Page rendered');
                 });
-                
+
                 // Append canvas to the PDF container to download the PDF
                 pdfContainer.appendChild(canvas);
                 // Add download button after all pages are rendered
@@ -73,7 +115,7 @@ function renderPDF(year, semester, branch, exam, subject) {
     }, reason => {
         console.error(reason);
         pdfContainer.innerHTML = '<img src="../assets/searchNotFound.png"  height="300px" width="400px" alt="Search Not Found" class="not-found-image"/>';
-        
+
         // Apply CSS media query
         const style = document.createElement('style');
         style.innerHTML = `

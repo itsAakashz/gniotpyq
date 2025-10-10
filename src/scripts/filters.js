@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtn = document.getElementById('filter-btn');
 
     semesterSelect.addEventListener('change', function() {
-        if (semesterSelect.value === '1' || semesterSelect.value === '2') {
+        if (semesterSelect.value === '1' || semesterSelect.value === '2' || semesterSelect.value === '3') {
             branchSelect.value = 'common';
             branchSelect.disabled = true;
         } else {
@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     filterBtn.addEventListener('click', function() {
         const year = document.getElementById('year').value;
-        const semester = semesterSelect.value;
+        const yearOfStudy = semesterSelect.value;
         const branch = branchSelect.value;
-        const exam = document.getElementById('exam').value;
         const subject = document.getElementById('subject').value;
+        const exam = document.getElementById('exam').value;
+
+        console.log('FILTERS.JS - Values being sent:', { year, yearOfStudy, branch, subject, exam });
 
         // Call the function to render the PDF based on the selected filters
-        renderPDF(year, semester, branch, exam, subject);
+        renderPDF(year, yearOfStudy, branch, subject, exam);
     });
 });
