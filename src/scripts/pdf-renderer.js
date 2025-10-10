@@ -58,7 +58,9 @@ function renderPDF(year, yearOfStudy, branch, subject, exam) {
             pdf.getPage(pageNum).then(page => {
                 const viewport = page.getViewport({ scale: 1 });
                 const containerWidth = pdfContainer.clientWidth;
-                const scale = containerWidth / viewport.width;
+                // Use a smaller scale - max 500px width or container width, whichever is smaller
+                const maxWidth = Math.min(500, containerWidth - 40); // Reduced from 800px to 500px
+                const scale = Math.min(1.2, maxWidth / viewport.width); // Reduced max scale from 1.5 to 1.2
                 const scaledViewport = page.getViewport({ scale });
 
                 const canvas = document.createElement('canvas');
