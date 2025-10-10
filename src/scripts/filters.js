@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtn = document.getElementById('filter-btn');
 
     semesterSelect.addEventListener('change', function() {
-        if (semesterSelect.value === '1' || semesterSelect.value === '2') {
+        if (semesterSelect.value === '1' || semesterSelect.value === '2' || semesterSelect.value === '3') {
             branchSelect.value = 'common';
             branchSelect.disabled = true;
         } else {
