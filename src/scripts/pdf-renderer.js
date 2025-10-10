@@ -33,7 +33,7 @@ function renderPDF(year, semester, branch, exam, subject) {
                 page.render(renderContext).promise.then(() => {
                     console.log('Page rendered');
                 });
-                
+
                 // Append canvas to the PDF container to download the PDF
                 pdfContainer.appendChild(canvas);
                 // Add download button after all pages are rendered
@@ -73,7 +73,7 @@ function renderPDF(year, semester, branch, exam, subject) {
     }, reason => {
         console.error(reason);
         pdfContainer.innerHTML = '<img src="../assets/searchNotFound.png"  height="300px" width="400px" alt="Search Not Found" class="not-found-image"/>';
-        
+
         // Apply CSS media query
         const style = document.createElement('style');
         style.innerHTML = `
